@@ -1,0 +1,89 @@
+﻿#left-pane {
+    width: 40%;
+    float: left;
+    padding-right: 20px;
+}
+
+#right-pane {
+    width: 60%;
+    float: left;
+}
+
+html {
+    font-size: 14px;
+    /*background-color: darkgreen;*/
+    color: whitesmoke;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+a {
+    color: darkgreen;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url(../img/b.jpg);
+    background-size: cover;
+}
+
+label {
+    font-family: 'Palatino Linotype';
+}
+h1 {
+    text-align: center;
+    font-family: 'Footlight MT';
+    font-size: 100px;
+    font: bolder;
+    color: darkgreen;
+    margin: 20px;
+}
+
+
+.input-validation-error {
+    border: 2px solid #dc3545; /* same red as text-danger */
+    background-color: #faebd7; /* antique white */
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.validation-summary-errors ul {
+    list-style: none;
+}
+
+#reviewsSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+#reviewsSection img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#btnReviews {
+    display: block;
+    margin: auto;
+    background-color: darkgreen;
+    color: whitesmoke;
+    font-family: Algerian
+}
+
+
+
+
+

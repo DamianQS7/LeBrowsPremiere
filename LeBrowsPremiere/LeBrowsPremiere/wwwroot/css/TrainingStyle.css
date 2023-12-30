@@ -1,0 +1,100 @@
+﻿body {
+    margin:0px 0px 100px 0px;
+}
+.background {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url(../img/modelbackground.JPG);
+    width: 100%;
+    height: 700px;
+    margin: 0;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-backface-visibility: hidden;
+    -ms-transform: translateZ(0); /* IE 9 */
+    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    transform: translate3d(0px, 0px, 0px);
+    position: relative;
+    top: 0;
+    background-attachment:fixed;
+}
+.text {
+    text-align: center;
+    font-family: Cinzel;
+    font-size: 90px;
+    font: bolder;
+    color: white;
+    bottom: 300px;
+    position: absolute;
+    right: 350px
+}
+h4 {
+    text-align: center;
+    font-size: 25px;
+    background-color:olive;
+    padding:30px;
+    color:darkgreen;
+}
+.rounded float-start, .rounded float-end{
+    width:400px;
+    height:500px
+}
+.imgt1 {
+   text-align:center;
+
+}
+h2 {
+    text-align: center;
+    font: bolder;
+    font-family: Pristina;
+    font-size: 30px;
+    color: olivedrab
+}
+p {
+    font-family: 'Palatino Linotype';
+    font-size: large
+}
+label{
+    font-family:'Palatino Linotype';
+    font:bolder
+}
+.form {
+    padding: 20px;
+    border:dashed;
+    border-color:olivedrab;
+    margin-top:20px
+}
+.form-group, .col-auto {
+    margin-right: 100px;
+    margin-bottom:30px;
+    margin-top:20px
+}
+
+#TrainingSubmit {
+    display: block;
+    margin: auto;
+    background-color:darkolivegreen;
+    color: whitesmoke;
+    font-family: Algerian;
+    margin-top:20px;
+    width:50%
+}
+.input-validation-error {
+    border: 2px solid #dc3545; /* same red as text-danger */
+    background-color: #faebd7; /* antique white */
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.validation-summary-errors ul {
+    list-style: none;
+}
+h1 {
+   text-align:center;
+    font-family:Cinzel;
+    font-size: 20px;
+    font: bolder;
+    color: olivedrab;
+  margin-bottom:20px
+}

@@ -1,0 +1,35 @@
+﻿body {
+    background-image: url(../img/background1.jfif);
+    background-size: cover;
+    margin: 0px 0px 100px 0px;
+}
+h1 {
+    text-align: center;
+    font-family: Cinzel;
+    font-size: 50px;
+    font: bolder;
+    color: olivedrab;
+    margin-bottom: 20px
+}
+h3 {
+    font-family:'Footlight MT';
+    font-size: 30px;
+    font: bolder;
+    color: black;
+    font: bold;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+#sectionBtn {
+    display: block;
+    margin: auto;
+    background-color: darkolivegreen;
+    color: whitesmoke;
+    font-family: Algerian;
+    width: 50%
+}
+.model{
+    width:500px;
+    height:500px;
+    margin-left:0px;
+}

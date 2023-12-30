@@ -1,0 +1,93 @@
+﻿html {
+    font-size: 14px;
+    color:whitesmoke;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+      
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 100px;
+    background-image: url(../img/background1.jfif);
+    background-size: cover;
+}
+
+
+#ContactForm {
+    border: solid;
+    padding: 20px;
+}
+
+.form-group, .col-auto {
+    margin: 20px;
+}
+
+#ContactSubmit {
+    display: block;
+    margin: auto;
+    background-color: darkgreen;
+    color:whitesmoke;
+    font-family:Algerian
+}
+h1 {
+    text-align: center;
+    font-family: Cinzel;
+    font-size: 80px;
+    font: bolder;
+    color: darkgreen;
+    margin: 20px;
+}
+h3{
+    font-family:Cinzel;
+    font-size:30px;
+    font:bolder;
+    color:darkgreen;
+    text-align:center;
+        margin:20px
+}
+
+#location{
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font:bold;
+}
+
+label{
+    font-family:'Bodoni MT';
+    font:bolder;
+    font-size:large
+}
+p{
+    font-family:'Palatino Linotype';
+    font-size:large
+}
+
+#hours{
+    font-size:larger;
+    font:bolder;
+    font-family:'Lucida Calligraphy';
+    text-align:center
+        
+}
+.input-validation-error {
+    border: 2px solid #dc3545; /* same red as text-danger */
+    background-color: #faebd7; /* antique white */
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.validation-summary-errors ul {
+    list-style: none;
+}
+

@@ -1,0 +1,61 @@
+﻿body {
+margin-bottom:100px;
+}
+footer{
+    margin-top:40px
+}
+h1 {
+    text-align: center;
+    font-family: Pristina;
+    font-size: 100px;
+    font: bolder;
+    color: darkgreen;
+    margin: 20px;
+}
+
+h3 {
+    font-family:Algerian;
+    font-size: 40px;
+    font: bolder;
+    color: darkolivegreen;
+    text-align: center;
+    margin: 20px
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+p {
+    float: right;
+    font-family: 'Palatino Linotype';
+    font:bold;
+  color:orangered
+}
+#product {
+    display: block;
+    
+    color: whitesmoke;
+    font-family: Algerian;
+    width:50%;
+    height:50px;
+    margin-top:90px;
+    margin-bottom:50px;
+    text-align:center;
+    padding:10px
+}
+h4 {
+    font-family: Algerian;
+    font-size: 30px;
+    font: bolder;
+    color: darkolivegreen;
+    text-align: center;
+    margin: 20px
+}
+h5 {
+    
+    font-family: 'Palatino Linotype';
+    font-size:large
+}
+.productimg{
+    height:500px;
+}

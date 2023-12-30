@@ -1,0 +1,97 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: 100px;
+}
+
+div #home {
+    background-image: url(../img/homebackground.jpg);
+    background-size: cover;
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.logoimg {
+    margin: 40px;
+}
+
+.homepageSection {
+    padding: 45px;
+ 
+}
+    .homepageSection:nth-child(even) {
+        background-color: gainsboro
+    }
+h2 {
+    color: #8A9A5B;
+}
+
+.tagline {
+    padding: 50px;
+    text-align: center;
+    font-family: Cinzel;
+    font-size: 100px;
+    font: bolder;
+    color: white;
+    margin: 20px;
+}
+
+p {
+    font-family: 'Palatino Linotype';
+    font-size: large;
+    margin: 20px;
+}
+
+.top {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Colonna MT';
+}
+
+#sectionBtn {
+    display: block;
+    margin:50px auto auto auto;
+    background-color: steelblue;
+    width:100%;
+    font-family: Algerian;
+    border-color: goldenrod;
+    font-size:20px;
+    color: white;
+    padding:2px;
+    
+}
+#ContactBtn {
+    display: block;
+    margin: 50px auto auto auto;
+    background-color: steelblue;
+    width: 70%;
+    font-family: Algerian;
+    border-color: goldenrod;
+    font-size: 20px;
+    color: white;
+    padding: 2px;
+}
+a{
+    text-decoration:none;
+    color:white;
+}
+h2 {
+    text-align: center;
+    font-family: Cinzel;
+    font-size: 65px;
+    font: bolder;
+    color: darkgreen;
+    margin: 20px;
+}

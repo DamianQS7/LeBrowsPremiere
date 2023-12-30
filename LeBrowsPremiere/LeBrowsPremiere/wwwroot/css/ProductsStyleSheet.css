@@ -1,0 +1,23 @@
+﻿body {
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 100px;
+    background-image: url(../img/background1.jfif);
+    background-size: cover;
+}
+
+.card-img-top {
+    width: auto;
+    height: 250px;
+    object-fit:contain;
+   
+}
+img {
+    
+    overflow: clip;
+}

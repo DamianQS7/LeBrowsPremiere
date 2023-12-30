@@ -1,0 +1,79 @@
+﻿html {
+    font-size: 14px;
+    /*background-color: darkgreen;*/
+    color: whitesmoke;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+a {
+    color: darkgreen;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url(../img/AppointmentCover.png);
+    background-size: cover;
+}
+
+#FormButtons {
+    display: block;
+    margin: auto;
+    background-color: darkgreen;
+    color: whitesmoke;
+    font-family: Algerian
+}
+
+label {
+    font-family: 'Palatino Linotype';
+}
+
+
+.form-group, .col-auto {
+    margin: 20px;
+}
+
+
+
+h1 {
+    text-align: center;
+    font-family: 'Footlight MT';
+    font-size: 100px;
+    font: bolder;
+    color: darkgreen;
+    margin: 20px;
+}
+
+#appointmentList {
+    font-family: Palatino Linotype;
+    font-size: 20px;
+    font: bolder;
+    color: antiquewhite;
+    text-align: left;
+    margin: 20px;
+    background: darkgreen;
+   
+}
+
+
+.input-validation-error {
+    border: 2px solid #dc3545; /* same red as text-danger */
+    background-color: #faebd7; /* antique white */
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.validation-summary-errors ul {
+    list-style: none;
+}
