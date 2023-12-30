@@ -5,4 +5,4 @@ This represents the culmination of our capstone project, a collaborative effort 
 The business was looking to improve their existing website, to include an online store, a section to offer training courses, and a streamlined booking system for scheduling appointments and services.
 
 ## Technologies used
-The technologies used to develop this project were ASP.NET Core MVC, Entity Framework Core, ASP.NET Core Identity, Azure SQL Database, Bootstrap 5, xUnit, Moq, and Stripe integration as a payment gateway for the online store.
+The technologies used to develop this project were ASP.NET Core MVC, Entity Framework Core, ASP.NET Core Identity, Azure SQL Database, Microsoft SQL Server, Bootstrap 5, jQuery, xUnit, Moq, and Stripe integration as a payment gateway for the online store.
