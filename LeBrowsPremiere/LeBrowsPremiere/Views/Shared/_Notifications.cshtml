@@ -1,0 +1,42 @@
+﻿<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+@if (TempData["success"] != null)
+{
+    <script type="text/javascript">
+        toastr.success('@TempData["success"]');
+    </script>
+}
+
+@if (TempData["error"] != null)
+{
+    <script type="text/javascript">
+        toastr.error('@TempData["error"]');
+    </script>
+}
+
+@if (TempData.Any(t => t.Key.Contains("toastr")))
+{
+    var toastrData = @TempData.First(t => t.Key.Contains("toastr"));
+    var toastrType = toastrData.Key.Split(":")[1];
+    var toasterMessage = toastrData.Value;
+    <script type="text/javascript">
+        switch ('@toastrType')
+        {
+            case "success":
+                toastr.success('@toasterMessage');
+                break;
+            case "error":
+                toastr.error('@toasterMessage');
+                break;
+            case "info":
+                toastr.info('@toasterMessage');
+                break;
+            case "warning":
+                toastr.warning('@toasterMessage');
+                break;
+        }
+    </script>
+}
+
+
