@@ -1,0 +1,80 @@
+﻿@model BookAppointmentViewModel
+
+@{
+    ViewData["Title"] = "Book Appointment";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="~/css/AppointmentStyleSheet.css" type="text/css" />
+<link href="~/lib/jquery-timepicker/jquery.timepicker.min.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/lib/jquery-timepicker/jquery.timepicker.min.js"></script>
+<div class="bg-image">
+    <h1 class="text">Book an Appointment</h1>
+    <p> <i class="arrow down"></i></p>
+</div>
+<div class="col-sm-12 col-md-6">
+    <form asp-controller="Appointment" asp-action="BookAppointment" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="text-danger" asp-validation-summary="All"></div>
+
+        <div>
+            <button id="appointmentList" asp-controller="Appointment" asp-action="ListAppointment"> Go to My Appointments </button>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Appointment.ServiceId">Service:</label>
+            @Html.DropDownListFor(model => model.Appointment.ServiceId
+            , new SelectList(Model.Services, "Id", "Name")
+            , new { @onchange = "OnServiceChange(event)" }
+            )
+        </div>
+
+        <div class="form-group">
+            <label asp-for="AppointmentDate">Appointment Date: </label>
+            <input type="date" asp-for="AppointmentDate" class="form-control" onchange="OnAppointmentDateTimeChange(event)" id="AppointmentDate"/>
+
+            <label asp-for="AppointmentTime">Appointment Time:</label>
+
+            @Html.TextBoxFor(m => m.AppointmentTime, "{0:hh\\:mm}", new { @class = "form-control timepicker", @onchange = "OnAppointmentDateTimeChange(event)" } )
+        </div>
+
+        <input type="hidden" asp-for="@Model.Appointment.Id" />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <button id="FormButtons" type="submit" class="btn btn-primary">Book Now</button>
+                </div>
+                <div class="col-12 col-md-6">
+                    <button id="FormButtons" asp-controller="Appointment" asp-action="ListAppointment" class="btn btn-primary">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="ServiceDescription"></label>
+        </div>
+        <div class="form-group">
+            <label id="ServicePrice"></label>
+        </div>
+        <div class="form-group">
+            <label id="ServiceDuration"></label>
+        </div>
+    </form>
+</div>
+<script>
+    var timepickerMinTime = '@Model.AppointmentStartTime.ToString("hh:mm tt")';
+    var timepickerMaxTime = '@Model.AppointmentEndTime.ToString("hh:mm tt")';
+    var timepickerInterval = @Model.AppointmentIntervalInMinutes;
+
+    $('.timepicker').timepicker({
+        timeFormat: 'h:i A',
+        step: timepickerInterval,
+        dynamic: false,
+        dropdown: true,
+        scrollbar: true,
+        minTime: timepickerMinTime,
+        maxTime: timepickerMaxTime
+    });
+</script>
+<script src="~/js/bookappointmentscript.js"></script>

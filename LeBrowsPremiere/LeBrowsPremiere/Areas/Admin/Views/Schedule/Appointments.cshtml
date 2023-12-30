@@ -1,0 +1,54 @@
+﻿@using LeBrowsPremiere.Enumerables
+@model ListAppointmentViewModel
+
+
+@{
+    ViewData["Title"] = "All appointments";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>>
+<link href="~/css/liststylesheet.css" rel="stylesheet" />
+<div class="bg-image">
+    <h1 class="text">Appointment List</h1>
+    <p> <i class="arrow down"></i></p>
+</div>
+
+
+
+<!-- Tab links -->
+<div class="tab">
+    <button id="tabAll" class="tablinks" onclick="openTab(event, 'All')">All</button>
+    <button class="tablinks" onclick="openTab(event, 'Confirmed')">Confirmed</button>
+    <button class="tablinks" onclick="openTab(event, 'Cancelled')">Cancelled</button>
+    <button class="tablinks" onclick="openTab(event, 'Completed')">Completed</button>
+</div>
+
+<!-- Tab content -->
+
+<div id="All" class="tabcontent">
+    @{
+        await Html.RenderPartialAsync("_AppointmentTablePartial", Model.Appointments);
+    }
+</div>
+
+<div id="Confirmed" class="tabcontent">
+    @{
+        await Html.RenderPartialAsync("_AppointmentTablePartial", Model.Appointments.Where(a=>a.Status == AppointmentStatusTypes.Confirmed.ToString()).ToList());
+    }
+</div>
+
+<div id="Cancelled" class="tabcontent">
+    @{
+        await Html.RenderPartialAsync("_AppointmentTablePartial", Model.Appointments.Where(a => a.Status == AppointmentStatusTypes.Cancelled.ToString()).ToList());
+    }
+</div>
+
+<div id="Completed" class="tabcontent">
+    @{
+        await Html.RenderPartialAsync("_AppointmentTablePartial", Model.Appointments.Where(a => a.Status == AppointmentStatusTypes.Completed.ToString()).ToList());
+    }
+</div>
+
+<script src="~/js/listappointmentscript.js"></script>

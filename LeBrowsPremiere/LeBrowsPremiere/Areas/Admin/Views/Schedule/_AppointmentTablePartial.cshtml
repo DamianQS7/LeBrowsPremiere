@@ -1,0 +1,28 @@
+﻿@using LeBrowsPremiere.Entities
+@using LeBrowsPremiere.Managers
+@model List<Appointment>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Appointment Date / Start Time</th>
+            <th>Status</th>
+            <th>Service</th>
+            <th>Duration</th>
+            <th>Appointment End Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in Model)
+        {
+            <tr>
+                <td>@appointment.AppointmentDate</td>
+                <td style="color: @AppointmentManager.AppointmentColor(appointment.Status)">@appointment.Status</td>
+                <td>@appointment.Service.Name</td>
+                <td>@appointment.Service.Duration</td>
+                <td>@appointment.AppointmentEndTime</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

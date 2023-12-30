@@ -1,0 +1,125 @@
+﻿@model ContactFormViewModel
+@{
+    ViewData["Title"] = "Contact Page";
+    Layout = "_Layout";
+}
+<link rel="stylesheet" href="~/css/ContactPageStyleSheet.css" type="text/css" />
+
+
+<h1>Our Location</h1>
+
+<p>
+    We started off as a homebased Beauty Studio in my small extra room in Kitchener,
+    Ontario Canada and we are now growing significantly in both size and reputation.
+    We at Le’ Brows Premiere pride ourselves in having a fantastic team that offers
+    incredible treatments and unbeatable customer service at rates we can stand behind.
+    We’ve been a mainstay for those who value top-notch services at affordable prices since 2020.
+</p>
+
+<p>
+
+    We are excited to bring Le' Brows Premiere in the Philippines to provide the most advanced
+    technique and technology in partnership with Canada's leader in Medical Aesthetic and cosmetic
+    Industries.
+</p>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2897.3150205058964!2d-80.4848063!3d43.4331363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf5211d63cf3d%3A0xd35cdc93247ed38a!2sLe&#39;%20Brows%20Premier%C3%A9!5e0!3m2!1sen!2sca!4v1676177941922!5m2!1sen!2sca"
+        width="600" height="450" style="border:0;" allowfullscreen></iframe>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3864.0406373898327!2d121.039242!3d14.424821000000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xafe5167234083ea4!2sFilinvest%20Corporate%20City!5e0!3m2!1sen!2sus!4v1676179026638!5m2!1sen!2sus"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<br />
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <h3>Canada</h3>
+        <p id="location"> Kitchener, Ontario</p>
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <h3>Philippines</h3>
+        <p id="location"> Filinvest, Alabang</p>
+        <p id="location"> Soon to open in 2023</p>
+    </div>
+
+
+    <br /><br />
+    <h1>Opening Hours</h1>
+
+    <p id="hours">
+        Mondays and Thursdays:  Closed
+
+    </p>
+    <br />
+    <br />
+    <p id="hours">
+        Tuesdays, Wednesdays, Friday :  10:00 am to 6:00pm
+
+    </p>
+    <br />
+    <br />
+    <p id="hours">
+        Saturdays and Sundays : 10:00am to 4:00pm
+
+    </p>
+</div>
+<div class="row justify-content-end">
+
+    <div class="col-sm-12 col-md-6">
+        <h1> Contact Us </h1>
+
+        <form id="ContactForm" asp-controller="ContactPage" asp-action="Contact" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+            <div class="row">
+                <div class="col-auto">
+                    <label asp-for="@Model.ContactFirstName">First Name</label>
+                    <input type="text" asp-for="@Model.ContactFirstName" class="form-control" />
+                    <span asp-validation-for="@Model.ContactFirstName" class="text-danger"></span>
+                </div>
+
+                <div class="col-auto">
+                    <label asp-for="@Model.ContactLastName">Last Name</label>
+                    <input type="text" asp-for="@Model.ContactLastName" class="form-control" />
+                    <span asp-validation-for="@Model.ContactLastName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-auto">
+                    <label asp-for="@Model.ContactEmail">Email</label>
+                    <input type="datetime" asp-for="@Model.ContactEmail" class="form-control" />
+                    <span asp-validation-for="@Model.ContactEmail" class="text-danger"></span>
+                </div>
+
+                <div class="col-auto">
+                    <label asp-for="@Model.ContactPhone">Phone Number</label>
+                    <input type="text" asp-for="@Model.ContactPhone" class="form-control" />
+                    <span asp-validation-for="@Model.ContactPhone" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="@Model.Message">Message</label>
+                <textarea cols="20" asp-for="@Model.Message" class="form-control"></textarea>
+                <span asp-validation-for="@Model.Message" class="text-danger"></span>
+            </div>
+            <br />
+
+            <button id="ContactSubmit" type="submit" class="btn btn-primary">Submit</button>
+            <br />
+            <br />
+
+            <h3>Find us:</h3>
+            <h3>
+
+                <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100075874315890&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0d94ib3isAp2uDm5Izj6c7" target="_blank" class="RNpQXe" style="width: 32px; height: 32px; margin: 6px;"><img src="~/img/fb-logo.png" alt="Facebook" class="xbGufb" style="width: 32px; height: 32px; " width="32" height="32"></a>
+                <a href="https://www.google.com/url?q=https%3A%2F%2Finstagram.com%2Flebrowsmain%3Figshid%3DYmMyMTA2M2Y%3D&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0gxi5TD1haFm8wVmSycm_c" target="_blank" class="RNpQXe" style="width: 32px; height: 32px; margin: 6px; "><img src="~/img/insta-logo.png" alt="Instagram" class="xbGufb" style="width: 32px; height: 32px;" width="32" height="32"></a>
+
+            </h3>
+        </form>
+    </div>
+</div>
+
+
+
+    

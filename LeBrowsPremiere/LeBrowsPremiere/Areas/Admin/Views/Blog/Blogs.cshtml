@@ -1,0 +1,55 @@
+﻿@model BlogsViewModel
+@{
+    ViewData["Title"] = "Blogs";
+    Layout = "_Layout";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/BlogStyleSheet.css" type="text/css" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="left-pane">
+            <h2>Recent Blogs</h2>
+            <ul class="list-unstyled">
+                @foreach (var blog in Model.Blogs)
+                {
+                    <li><a asp-area="Admin" asp-controller="Blog" asp-action="Blogs" asp-route-id="@blog.Id">@blog.CreatedDate.ToString("d") @blog.Title</a></li>
+                }
+            </ul>
+        </div>
+        <div id="right-pane">
+            <div>
+                <a asp-area="Admin" asp-controller="Blog" asp-action="Upsert">Add</a>
+            </div>
+
+            @if (@Model.HasSelectedBlog)
+            {
+                <div>
+                    <a asp-area="Admin" asp-controller="Blog" asp-action="Upsert" asp-route-id="@Model.SelectedBlog.Id">Edit</a>
+                </div>
+
+                <div>
+                    <a asp-area="Admin" asp-controller="Blog" asp-action="Delete" asp-route-id="@Model.SelectedBlog.Id">Delete</a>
+                </div>
+            }
+            @if(@Model.HasSelectedBlog)
+            {
+                <h2>@Model.SelectedBlog.Title</h2>
+                <p>@Model.SelectedBlog.CreatedDate.ToString("d")</p>
+                <p>@Model.SelectedBlog.Description</p>
+            }
+            else{
+                <h2>No blog selected.</h2>
+            }
+        </div>
+    </div>
+</div>
+
+
+

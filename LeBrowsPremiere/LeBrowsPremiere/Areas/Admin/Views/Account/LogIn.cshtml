@@ -1,0 +1,72 @@
+﻿@model LogInViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "_Layout";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="~/css/AccountStyleSheet.css" type="text/css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<div class="bg-image">
+    <h1 class="text">Log In</h1>
+    <p> <i class="arrow down"></i></p>
+</div>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form id="accountForm" method="post" asp-controller="Account" asp-action="LogIn" asp-route-returnUrl="@Model.ReturnUrl">
+    <div class="form-group row">
+        <div class="col-sm-2"><label>Email/Username:</label></div>
+        <div class="col-sm-4">
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class="col">
+            <span asp-validation-for="Email"
+                  class="text-danger"></span>
+        </div>
+    </div>
+
+   
+
+
+    <div class="form-group row">
+        <div class="col-sm-2"><label>Password:</label></div>
+        <div class="col-sm-4">
+            <input type="password" asp-for="Password"
+                   class="form-control" />
+        </div>
+        <div class="col">
+            <span asp-validation-for="Password"
+                  class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-sm-2 col-sm-4">
+            <input type="checkbox" title="Remember Me"
+                   asp-for="RememberMe" class="form-check" />
+            <label>Remember Me</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2 col-sm-4">
+            <button type="submit" class="btn btn-primary" id="FormButtons">
+                Log In
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2 col-sm-4">
+            Not registered?
+            <a asp-controller="Account" asp-action="Register"> Register as a new user</a>
+        </div>
+    </div>
+</form>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+

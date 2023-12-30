@@ -1,0 +1,59 @@
+﻿@model BlogViewModel
+@{
+    ViewData["Title"] = "Blogs";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/BlogStyleSheet.css" type="text/css" />
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-10">
+            <div class="border p-3 mt-4 row">
+                <div class="col-12 pb-2">
+                    <h2 class="text-primary">@(Model.Blog.Id != 0 ? "Update" : "Create") Blog</h2>
+                    <hr />
+                </div>
+                <input type="hidden" asp-for="@Model.Blog.Id" />
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label asp-for="Blog.Title"></label>
+                    <input asp-for="Blog.Title" class="form-control" />
+                    <span asp-validation-for="Blog.Title" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Blog.Description"></label>
+                    <textarea asp-for="Blog.Description" class="form-control"></textarea>
+                    <span asp-validation-for="Blog.Description" class="text-danger"></span>
+                </div>
+
+                <div class="col-12">
+                    @if (Model.IsNew)
+                    {
+                        <button type="submit" onClick="ValidateInput()" class="btn btn-primary" style="width:150px">Create</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+                    }
+
+                    <a asp-controller="Blog" asp-action="Blogs" class="btn btn-secondary" style="width:150px">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+</form>
+
+
+
+
+
+
+

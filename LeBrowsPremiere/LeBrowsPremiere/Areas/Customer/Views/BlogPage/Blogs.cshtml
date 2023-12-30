@@ -1,0 +1,60 @@
+﻿@model BlogsViewModel
+@{
+    ViewData["Title"] = "Blogs";
+    Layout = "_Layout";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/BlogStyleSheet.css" type="text/css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<div class="container-fluid">
+    <h1>Blogs</h1>
+    <div class="row">
+        <div id="left-pane">
+            <h2>Recent Blogs</h2>
+            <ul class="list-unstyled">
+                @foreach (var blog in Model.Blogs)
+                {
+                    <li><a asp-area="Customer" asp-controller="BlogPage" asp-action="Blogs" asp-route-id="@blog.Id">@blog.CreatedDate.ToString("d") @blog.Title</a></li>
+                }
+            </ul>
+        </div>
+        <div id="right-pane">
+            @if(@Model.HasSelectedBlog)
+            {
+                <h2>@Model.SelectedBlog.Title</h2>
+                <p>@Model.SelectedBlog.CreatedDate.ToString("d")</p>
+                <p>@Model.SelectedBlog.Description</p>
+            }
+            else
+            {
+                <h2>No blog selected.</h2>
+            }
+        </div>
+    </div>
+</div>
+
+<div>
+    <h1>Reviews</h1>
+    <div id="reviewsSection">
+        <img src="~/img/review4.jpg" alt="Review">
+        <img src="~/img/review5.jpg" alt="Review">
+        <img src="~/img/review6.jpg" alt="Review">
+        <img src="~/img/review1.jpg" alt="Review">
+        <img src="~/img/review2.jpg" alt="Review">
+        <img src="~/img/review3.jpg" alt="Review">     
+    </div>
+
+    <a href="https://g.page/r/CYrTfiST3FzTEB0/review">
+        <button id="btnReviews"> Leave us a review </button>
+    </a>
+ 
+</div>

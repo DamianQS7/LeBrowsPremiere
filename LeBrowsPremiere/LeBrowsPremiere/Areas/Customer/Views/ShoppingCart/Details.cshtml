@@ -1,0 +1,27 @@
+﻿@model ShoppingCart
+
+<link rel="stylesheet" href="~/css/DetailsStyleSheet.css" type="text/css" />
+
+
+<form method="post">
+    <input hidden asp-for="Price" />
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="@Model.Product.ImageUrl" class="productimg" />
+
+            </div>
+            <div class="col">
+                <h3> @Model.Product.Name</h3>
+                <p> By - @Model.Product.Brand</p>
+                <div class="row pl-2">
+                    <p class="text-secondary">@Html.Raw(Model.Product.Description)</p>
+                </div>
+
+                <button type="submit" value="Add to Cart" class="btn btn-primary form-control" style="height:50px;">Add to Cart</button>
+
+            </div>
+
+        </div>
+    </div>
+</form>

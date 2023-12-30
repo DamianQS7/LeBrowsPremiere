@@ -1,0 +1,23 @@
+﻿@model int
+
+<link rel="stylesheet" href="~/css/OrderConfirmationStyleSheet.css" type="text/css" />
+<meta name=”viewport” content=”width:device-width, initial-scale:1.0">
+<div class="container-sm">
+    <div class="row">
+    <div class="col">
+        <img src="~/img/c.png" class="model" alt="model" >
+
+    </div>
+
+    <div class="col text-center">
+        <h1 >Your Order has been recieved!</h1>
+        <br/>
+        <img src="~/img/right.png" alt="model" style="width:150px; height:150px">
+        <h3>Thank you for your purchase!</h3>
+        <h3>Your Order Number is : @Model </h3><br />
+        <br />
+        <a asp-area="Admin" asp-controller="Product" asp-action="DisplayProducts" class="btn btn-primary" id="sectionBtn">Continue Shopping</a><br />
+    </div>
+</div>
+</div>
+

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Product>
+<link rel="stylesheet" href="~/css/ProductsStyleSheet.css" type="text/css"/>
+
+<div class="text-center" id="home">
+	<p class="tagline">Our Products</p>
+</div>
+
+@if (Model.ToList().Count > 0)
+{
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+
+		@foreach (Product product in Model)
+		{
+			<div class="col">
+				<div class="card">
+					<img src="@product.ImageUrl" class="card-img-top rounded" />
+
+					<div class="card-body">
+						<div class="pl-1">
+							<p class="card-title h5">@product.Name</p>
+							<p class="card-title text-success">by <b>@product.Brand</b></p>
+						</div>
+						<div class="pl-1">
+							<p>Price: <b>$@product.Price.ToString("0.00")</b></p>
+						</div>
+					</div>
+					<div>
+						<a asp-area="Customer" asp-controller="ShoppingCart" asp-action="Details" class="btn btn-success form-control" asp-route-productId="@product.Id">
+							Details
+						</a>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+}
+else
+{
+	<p>There are no items to display at this moment.</p>
+}

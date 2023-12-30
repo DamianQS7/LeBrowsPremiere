@@ -1,0 +1,61 @@
+﻿@model SettingsViewModel
+
+@{
+    ViewBag.Title = "Settings";
+    Layout = "_Layout";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="~/css/AppointmentStyleSheet.css" type="text/css" />
+<link href="~/css/jquery.timepicker.min.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.timepicker.min.js"></script>
+<div class="bg-image">
+    <h1 class="text">Appointment List</h1>
+    <p> <i class="arrow down"></i></p>
+</div>
+
+
+<form id="accountForm" method="post" asp-controller="Schedule" asp-action="Settings">
+    <div class="form-group">
+        <label asp-for="AppointmentStartTime">Appointment Start Time:</label>
+
+        @Html.TextBoxFor(m => m.AppointmentStartTime, "{0:hh\\:mm}", new { @class = "form-control timepicker" } )
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AppointmentEndTime">Appointment End Time:</label>
+
+        @Html.TextBoxFor(m => m.AppointmentEndTime, "{0:hh\\:mm}", new { @class = "form-control timepicker" } )
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AppointmentIntervalInMinutes">Appointment Interval:</label>
+
+        @Html.TextBoxFor(m => m.AppointmentIntervalInMinutes, new { @type = "number" })
+    </div>
+
+    <div class="row">
+        <div class="offset-2 col-sm-4">
+            <button type="submit" class="btn btn-primary" id="FormButtons">
+                Save
+            </button>
+        </div>
+    </div>
+</form>
+
+<script>
+    var timepickerMinTime = '@Model.AppointmentStartTime.ToString("hh:mm tt")';
+    var timepickerMaxTime = '@Model.AppointmentEndTime.ToString("hh:mm tt")';
+    var timepickerInterval = @Model.AppointmentIntervalInMinutes;
+
+    $('.timepicker').timepicker({
+        timeFormat: 'h:i A',
+        step: '1',
+        dynamic: false,
+        dropdown: true,
+        scrollbar: true
+    });
+</script>
+<script src="~/js/settings.js"></script>
