@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jqueryui@1.13.2",
+      "destination": "wwwroot/lib/jqueryui/"
+    },
+    {
+      "library": "jquery-timepicker@1.14.0",
+      "destination": "wwwroot/lib/jquery-timepicker/"
+    }
+  ]
+}
